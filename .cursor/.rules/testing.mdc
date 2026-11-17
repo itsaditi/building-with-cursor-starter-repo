@@ -1,0 +1,8 @@
+---
+description: Unit and integration testing standards
+globs: ["**/*.test.*", "**/*.spec.*", "**/test_*.py"]
+alwaysApply: false
+---
+- Test behavior and edge cases, not implementation details.
+- Always cover: (1) happy path, (2) invalid/boundary inputs, (3) state transition conflicts (e.g., cancelling an already delivered order), and (4) concurrency/idempotency edge cases.
+- Keep tests fast, deterministic, and independent of external network calls.

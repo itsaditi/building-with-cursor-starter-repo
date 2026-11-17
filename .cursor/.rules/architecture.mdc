@@ -1,0 +1,11 @@
+---
+description: Core architectural standards and engineering guardrails
+alwaysApply: true
+---
+- Separate concerns strictly: HTTP/API handlers, pure domain business logic, and repository/storage interfaces must live in separate files.
+- Default to clean in-memory repositories (Maps/dicts) behind explicit interfaces unless a database is explicitly requested. Do NOT install heavy ORMs or unnecessary third-party libraries.
+- Use explicit dependency injection so domain services can be unit-tested without starting an HTTP server.
+- Enforce strict typing (no `any` in TypeScript; use Pydantic/type hints in Python).
+- Handle edge cases defensively: validate all inputs at boundaries, guard against null/missing entities, and return structured domain errors.
+- Keep diffs minimal and scoped. Never refactor unrelated files or alter existing response schemas without explicit instruction.
+- For any new functionality added, add unit tests for the functions and/or API endpoint added with it.
