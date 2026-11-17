@@ -8,4 +8,6 @@ alwaysApply: true
 - Enforce strict typing (no `any` in TypeScript; use Pydantic/type hints in Python).
 - Handle edge cases defensively: validate all inputs at boundaries, guard against null/missing entities, and return structured domain errors.
 - Keep diffs minimal and scoped. Never refactor unrelated files or alter existing response schemas without explicit instruction.
-- For any new functionality added, add unit tests for the functions and/or API endpoint added with it.
+- When asked to create a server and client, add Readme.md with instructions and commands to run them.
+- For any new functionality added, add unit tests for the functions and/or API endpoint added with it. And keep a release note in the ReadMe.md with a list of features and brief summary of what they do. Eg, in server, keep a record of API endpoints and what they do, if they call database, if they call any dependency, etc.
+- Build iteratively, do not build everything at once.
